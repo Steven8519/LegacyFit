@@ -1,5 +1,7 @@
 package com.lagacyfit.domain;
 
+import java.util.List;
+
 /**
  * Created by stevenmcdonald on 11/28/16.
  */
@@ -15,17 +17,19 @@ public class User {
     private String city;
     private String state;
     private String zipCode;
-    private Workout workout;
-    private WorkoutList workoutList;
 
     private boolean enabled = true;
+
+    private Workout workout;
+    private ClassSession classSession;
+    private List<Schedule> schedules;
 
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
-        id = id;
+        this.id = id;
     }
 
     public String getUserName() {
@@ -116,12 +120,20 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Workout getWorkout() {
-        return workout;
+    public ClassSession getClassSession() {
+        return classSession;
     }
 
-    public void setWorkout(Workout workout) {
-        this.workout = workout;
+    public void setClassSession(ClassSession classSession) {
+        this.classSession = classSession;
+    }
+
+    public List<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
     }
 
     @Override
@@ -129,13 +141,5 @@ public class User {
         return "User [Id=" + id + ", username=" + userName  + ", password=" + password + ", firstName= " + firstName
                 + ", lastName=" + lastName + ", email=" + email + ", phone=" + phoneNumber + ", address=" + address +
                 ", city=" + city + ", state=" + state + ", zip code=" + zipCode;
-    }
-
-    public WorkoutList getWorkoutList() {
-        return workoutList;
-    }
-
-    public void setWorkoutList(WorkoutList workoutList) {
-        this.workoutList = workoutList;
     }
 }

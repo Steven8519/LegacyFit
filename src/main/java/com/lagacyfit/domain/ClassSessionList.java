@@ -5,27 +5,29 @@ import java.util.Date;
 /**
  * Created by stevenmcdonald on 11/28/16.
  */
-public class WorkoutList {
+public class ClassSessionList {
 
     private Long id;
     private Date date;
     private String description;
-    private String workoutType;
+    private String classType;
     private String location;
     private String instructorName;
-    private Workout workout;
 
-    public WorkoutList(Date date, String description, String workoutType, String location, String instructorName, Workout workout) {
+    private ClassSession classSession;
+
+    public ClassSessionList(Date date, String description, String classType, String location, String instructorName,
+                            ClassSession classSession) {
         super();
         this.date = date;
         this.description = description;
-        this.workoutType = workoutType;
+        this.classType = classType;
         this.location = location;
         this.instructorName = instructorName;
-        this.workout = workout;
+        this.classSession = classSession;
     }
 
-    public WorkoutList() {}
+    public ClassSessionList() {}
 
     public Long getId() {
         return id;
@@ -51,12 +53,12 @@ public class WorkoutList {
         this.description = description;
     }
 
-    public String getWorkoutType() {
-        return workoutType;
+    public String getClassType() {
+        return classType;
     }
 
-    public void setWorkoutType(String workoutType) {
-        this.workoutType = workoutType;
+    public void setClassType(String classType) {
+        this.classType = classType;
     }
 
     public String getLocation() {
@@ -75,11 +77,11 @@ public class WorkoutList {
         this.instructorName = instructorName;
     }
 
-    public Workout getWorkout() {
-        return workout;
+    public ClassSession getClassSession() {
+        return classSession;
     }
 
-    public void setWorkout(Workout workout) {
-        this.workout = workout;
+    public void setClassSession(ClassSession classSession) {
+        this.classSession = classSession;
     }
 }
